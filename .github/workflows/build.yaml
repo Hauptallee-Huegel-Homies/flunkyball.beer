@@ -31,13 +31,7 @@ jobs:
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
-      - name: "Go to themes directory"
-        run: cd themes/tournaments
-      - name: "Run npm install"
-        run: npm install
-      - name: "Run npm run fontawesome"
-        run: npm run fontawesome
-      - name: "Go back to main directory"
-        run: "cd ../../"
+      - name: "Install the dependencies of the theme"
+        run: "cd themes/tournaments/ && npm install && npm run fontawesome && cd ../../."
       - name: "Run Hugo"
         run: hugo
