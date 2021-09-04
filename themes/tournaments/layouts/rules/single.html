@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<section class="section">
+    <div class="container">
+
+        <h1 class="title">{{ .Title | safeHTML }}</h1>
+        <h3 class="subtitle">{{ .Params.authors | safeHTML }}</h3>
+        <div class="pb-4">
+            <span class="tag is-info"><span class="icon-text"><span class="icon"><i class="fas fa-tag"></i></span><span>{{ .Params.version | safeHTML }}</span></span></span>
+            {{ if .Params.latest }}
+            <span class="tag is-success"><span class="icon-text"><span class="icon"><i class="fas fa-calendar-check"></i></span><span>{{ i18n "latest" | safeHTML }} {{ i18n "version" | safeHTML }}</span></span></span>
+            {{ else }}
+            <span class="tag is-warning"><span class="icon-text"><span class="icon"><i class="fas fa-calendar-times"></i></span><span>{{ i18n "deprecated" | safeHTML }} {{ i18n "version" | safeHTML }}</span></span></span>
+            {{ end }}
+            <span class="tag is-light"><span class="icon-text"><span class="icon"><i class="fas fa-calendar-day"></i></span><span>{{ .Date.Format "Jan, 2006" | safeHTML}}</span></span></span>
+        </div>
+        <div class="content">
+            {{ .TableOfContents }}
+        </div>
+        <article class="content rules">
+            {{ .Content | safeHTML }}
+        </article>
+    </div>
+</section>
+
+{{ end }}

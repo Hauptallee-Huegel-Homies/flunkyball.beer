@@ -1,0 +1,5 @@
+<footer class="footer">
+    <div class="content has-text-centered">
+        {{ i18n "since" | safeHTML }} {{ .Date.Format "2006" | safeHTML }}. <a href="{{ "impressum" | relURL }}">{{ i18n "imprint" }}</a>
+    </div>
+</footer>

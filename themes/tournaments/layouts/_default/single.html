@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<section class="section">
+    <div class="container">
+        <h1 class="title has-text-justified">{{ .Title }}</h1>
+        <div class="pb-5">
+        <span class="tag is-light icon-text"><span class="icon"><i class="fas fa-calendar-day"></i></span> <span>{{  .Date.Format "January 2006" | safeHTML }}</span></span>
+        {{ with .Params.location }}
+        <span class="tag is-light icon-text"><span class="icon"><i class="fas fa-map-marked-alt"></i></span> <span>{{ . }}</span></span>
+        {{ end }}
+        </div>
+        <article class="content has-text-justified">
+
+
+            {{ .Content }}
+
+        </article>
+    </div>
+</section>
+
+{{ end }}

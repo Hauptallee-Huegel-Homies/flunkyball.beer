@@ -1,0 +1,333 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+
+<!-- Hero Start -->
+
+
+{{ if .Site.Data.homepage.hero.enable }}
+{{ with $data.homepage.hero }}
+<section class="hero is-large is-primary">
+    <div class="container">
+        <div class="hero-body">
+            <h1 class="title">
+                {{ .title | markdownify }}
+            </h1>
+            <h2 class="subtitle">
+                {{ .subtitle | markdownify }}
+            </h2>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+
+<!-- Hero End -->
+
+<!-- Sections -->
+
+{{ $isleft := false }}
+{{ $backgroundindex := 0 }}
+{{ $backgrounds := (slice "light" "lighter" "dark" "lighter" "light" "lighter" "darker") }}
+
+{{ if .Site.Data.homepage.about.enable }}
+
+<!-- About Start -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="about">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.about.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.about.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.about.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.about.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <p class="has-text-justified px-6 py-3">
+                    {{ $data.homepage.about.content | safeHTML }}
+                </p>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.about.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.about.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+
+<!-- About End -->
+{{ end }}
+
+{{ if .Site.Data.homepage.rules.enable }}
+
+<!-- Rules Start -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="rules">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.rules.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.rules.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.rules.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.rules.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <div class="columns">
+                    <div class="column">
+                        <p class="has-text-justified px-6 pt-3">
+                            {{ $data.homepage.rules.content | safeHTML }}
+                        </p>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-narrow has-text-centered">
+                        <a class="button" href="{{ $data.homepage.rules.downloadlink | safeURL }}">
+                            <span class="icon-text"><span>Download</span> <span class="icon is-medium"><i
+                                    class="fas fa-download fa-lg"></i></span></span>
+                        </a>
+                    </div>
+                    <div class="column is-narrow has-text-centered">
+                        <a class="button" href="{{ range first 1 (where .Site.RegularPages "Type" "rules") }}{{ .RelPermalink | safeURL }}{{ end }}">
+                            <span class="icon-text"><span>Web-Version</span> <span class="icon is-medium"><i
+                                    class="fas fa-mobile-alt fa-lg"></i></span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.rules.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.rules.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+<!-- Rules End -->
+{{ end }}
+
+
+{{ if .Site.Data.homepage.events.enable }}
+<!-- Events Start -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="events">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.events.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.events.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.events.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.events.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <p class="has-text-justified px-6 py-3">
+                    {{ $data.homepage.events.content | safeHTML }}
+                </p>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.events.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.events.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        <div class="columns is-multiline">
+            {{ range first 4 (where .Site.RegularPages "Type" "events") }}
+            <div class="column is-half">
+                <div class="box">
+                    <h1 class="title has-text-dark">{{ .Title }}</h1>
+                    <div class="pb-3">
+                    <span class="tag is-light icon-text"><span class="icon"><i
+                            class="fas fa-calendar-day"></i></span> <span>{{  .Date.Format "January 2006" | safeHTML }}</span></span>
+                        {{ with .Params.location }}
+                        <span class="tag is-light icon-text"><span class="icon"><i
+                                class="fas fa-map-marked-alt"></i></span> <span>{{ . }}</span></span>
+                        {{ end }}
+                    </div>
+                    <article class="content">
+                        {{ .Summary | safeHTML }}
+                        <div class="has-text-right"><a class="button" href="{{ .RelPermalink }}">{{ i18n "learnmore" }}</a></div>
+                    </article>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+
+<!-- Events End -->
+{{ end }}
+
+{{ if .Site.Data.homepage.clubs.enable }}
+
+<!-- Clubs -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="clubs">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.clubs.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.clubs.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.clubs.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.clubs.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <p class="has-text-justified px-6 py-3">{{ $data.homepage.clubs.content | safeHTML }}</p>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.clubs.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.clubs.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+
+<!-- Clubs Ende -->
+{{ end }}
+
+{{ if .Site.Data.homepage.halloffame.enable }}
+
+<!-- Hall-of-Fame Start -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="hall-of-fame">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.halloffame.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.halloffame.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.halloffame.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.halloffame.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <p class="has-text-justified px-6 py-3">{{ $data.homepage.halloffame.content | safeHTML }}</p>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.halloffame.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.halloffame.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+<!-- Hall-of-Fame End -->
+{{ end }}
+
+{{ if .Site.Data.homepage.contact.enable }}
+
+<!-- Contact Start -->
+<section class="section section-{{ index $backgrounds $backgroundindex | safeHTMLAttr }}" id="contact">
+    <div class="container">
+        <h1 class="title has-text-centered">{{ $data.homepage.contact.title | markdownify }}</h1>
+        <div class="columns">
+            <div class="column is-hidden-tablet has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.contact.icon | safeHTMLAttr }} fa-6x"></i>
+                </span>
+            </div>
+            {{ if $isleft }}
+            {{ if .Site.Data.homepage.contact.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.contact.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="column">
+                <p class="has-text-justified px-6 py-3">{{ $data.homepage.contact.content | safeHTML }}</p>
+            </div>
+            {{ if not $isleft }}
+            {{ if .Site.Data.homepage.contact.useicon }}
+            <div class="column is-hidden-mobile has-text-centered">
+                <span class="">
+                    <i class="fas {{ .Site.Data.homepage.contact.icon | safeHTMLAttr }} fa-10x"></i>
+                </span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ $isleft = not $isleft }}
+{{ $backgroundindex = mod (add $backgroundindex 1) (len $backgrounds) }}
+<!-- Contact End -->
+{{ end }}
+
+
+{{ end }}

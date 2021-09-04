@@ -1,0 +1,101 @@
+/*
+// Colors
+
+$black:        hsl(0, 0%, 4%);
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
+
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-lightest: hsl(0, 0%, 93%);
+
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+$white:        hsl(0, 0%, 100%);
+
+$orange:       hsl(14,  100%, 53%);
+$yellow:       hsl(44,  100%, 77%);
+$green:        hsl(153, 53%,  53%);
+$turquoise:    hsl(171, 100%, 41%);
+$cyan:         hsl(207, 61%,  53%);
+$blue:         hsl(229, 53%,  53%);
+$purple:       hsl(271, 100%, 71%);
+$red:          hsl(348, 86%, 61%);
+
+$primary: $turquoise
+
+$info: $cyan
+$success: $green
+$warning: $yellow
+$danger: $red
+
+$light: $white-ter
+$dark: $grey-darker
+ */
+
+.section-light {
+}
+
+.section-lighter {
+  background-color: $white-ter;
+}
+
+
+.section-dark {
+  color: $light;
+  background-color: $grey-dark;
+}
+
+.section-dark .title {
+  color: $light;
+}
+
+.section-darker {
+  color: $light;
+  background-color: $grey-darker;
+}
+
+.section-darker .title {
+  color: $light;
+}
+
+body{
+  counter-reset: section subsection rule subrule;
+}
+
+.content.rules h1 {
+  counter-increment: section;
+  counter-set: subsection 1;
+}
+
+.content.rules h2 {
+  counter-increment: subsection;
+}
+
+@counter-style subsection-style {
+  system: fixed;
+  symbols: "" ".1" ".2" ".3" ".4" ".5" ".6" ".7" ".8" ".9" ".10"
+}
+
+.content.rules ol {
+  counter-reset: rule;
+  list-style-type: none;
+}
+
+.content.rules ol li::before {
+  counter-increment: rule;
+  content: counter(section) counter(subsection, subsection-style) counter(rule, lower-alpha) ". "
+}
+
+.content.rules ol li ol {
+  counter-reset: subrule;
+  list-style-type: none;
+}
+
+.content.rules ol li ol li::before {
+  counter-increment: subrule;
+  content: counter(section) counter(rule,lower-alpha) counter(subrule) ". "
+}

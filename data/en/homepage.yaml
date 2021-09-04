@@ -1,0 +1,13 @@
+hero:
+  title: flunkyball.beer
+  subtitle: celebrating the urban party scene in Vienna
+
+about:
+  title: About
+  content: Every year millions of people play flunkyball recreationally and competetivly. We would like to celebrate that.
+  useicon: true
+  useimage: false
+  icon: fa-beer
+
+events:
+  title:

@@ -1,0 +1,40 @@
+hero:
+  enable: true
+
+about:
+  enable: true
+  useicon: true
+  useimage: false
+  icon: fa-beer
+
+rules:
+  enable: true
+  useicon: true
+  useimage: false
+  icon: fa-book
+
+
+events:
+  enable: true
+  useicon: true
+  useimage: false
+  icon: fa-calendar
+
+
+clubs:
+  enable: false
+  useicon: true
+  useimage: false
+  icon: fa-users
+
+halloffame:
+  enable: false
+  useicon: true
+  useimage: false
+  icon: fa-award
+
+contact:
+  enable: false
+  useicon: true
+  useimage: false
+  icon: fa-phone

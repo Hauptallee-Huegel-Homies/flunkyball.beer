@@ -1,0 +1,18 @@
+copyright: "Lukas Grassauer"
+defaultContentLanguage: de
+theme: "tournaments"
+baseURL: "https://flunkyball.beer"
+markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 1
+languages:
+  de:
+    title: flunkyball.beer
+    description: "Eine Website für alles rund um Flunkyball."
+    languageName: Deutsch
+  en:
+    title: flunkyball.beer
+    description: "An place to gather everything concerning Flunkyball."
+    languageName: English
