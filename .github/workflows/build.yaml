@@ -11,16 +11,33 @@ jobs:
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+          cache: 'npm'
       - name: "Setup Hugo"
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.88.0'
           extended: true
-      - uses: actions/cache@v2
+      - name: "Setup cache for Hugo"
+        uses: actions/cache@v2
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
+      - name: "Go to themes directory"
+        run: cd themes/tournaments
+      - name: "Run npm install"
+        run: npm install
+      - name: "Run npm run fontawesome"
+        run: npm run fontawesome
+      - name: "Go back to main directory"
+        run: "cd ../../"
       - name: "Run Hugo"
         run: hugo
