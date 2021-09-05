@@ -35,7 +35,7 @@ jobs:
         run: "cd themes/tournaments/ && npm install && cd ../../."
         shell: bash
       - name: "Copy fontawesome where it belongs"
-        run: cp "themes/tournaments/node_modules/@fortawesome/fontawesome-free/webfonts" "themes/tournaments/static/."
+        run: cp -r "themes/tournaments/node_modules/@fortawesome/fontawesome-free/webfonts" "themes/tournaments/static/."
       - name: "Test if webfonts is where it should be"
         run: test -d themes/tournaments/static/webfonts
         shell: bash
