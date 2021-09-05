@@ -33,5 +33,9 @@ jobs:
             ${{ runner.os }}-hugomod-
       - name: "Install the dependencies of the theme"
         run: "cd themes/tournaments/ && npm install && npm run fontawesome && cd ../../."
+        shell: bash
+      - name: "Test if webfonts is where it should be"
+        run: test -d themes/tournaments/static/webfonts
+        shell: bash
       - name: "Run Hugo"
         run: hugo

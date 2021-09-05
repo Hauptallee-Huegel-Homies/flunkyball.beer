@@ -32,6 +32,7 @@ jobs:
             ${{ runner.os }}-hugomod-
       - name: "Install the dependencies of the theme"
         run: "cd themes/tournaments/ && npm install && npm run fontawesome && cd ../../."
+        shell: bash
       - name: "Run hugo"
         run: hugo --minify
       - name: "Deploy pages"

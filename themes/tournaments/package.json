@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "fontawesome": "echo \"Copying fontawesome from modules to static\" && cp -r node_modules/@fortawesome/fontawesome-free/webfonts/ static/",
+    "fontawesome": "echo \"Copying fontawesome from modules to static\" && cp -r node_modules/@fortawesome/fontawesome-free/webfonts static/.",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
