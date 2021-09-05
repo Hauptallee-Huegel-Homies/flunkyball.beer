@@ -1,8 +1,7 @@
 name: github pages
 
 on:
-  push:
-    tags:
+  tags:
 
 jobs:
   deploy:
@@ -33,6 +32,8 @@ jobs:
       - name: "Install the dependencies of the theme"
         run: "cd themes/tournaments/ && npm install && cd ../../."
         shell: bash
+      - name: "Ensure themes/tournaments/static/ exists"
+        run: "mkdir themes/tournaments/static/"
       - name: "Copy fontawesome where it belongs"
         run: cp -r "themes/tournaments/node_modules/@fortawesome/fontawesome-free/webfonts" "themes/tournaments/static/."
       - name: "Run hugo"
