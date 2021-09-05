@@ -1,7 +1,9 @@
 name: github pages
 
 on:
-  tags:
+  push:
+    tags:
+      - *
 
 jobs:
   deploy:
