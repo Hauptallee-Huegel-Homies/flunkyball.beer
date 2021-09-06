@@ -63,7 +63,7 @@ Jede Woche werden drei Tage zum gemeinsamen Austragen von Spielen zur Verfügung
 
 ### Allgemeines
 
-- Es gilt der [Regelsatz v1.2](https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/download/1.2-Final%2B1/de.pdf) des HaHüHo-Regel Komitees.
+- Es gilt der [Regelsatz v1.3](https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/download/1.3-Final%2B2/de.pdf) des HaHüHo-Regel Komitees.
 - Die Begegnungen sind 1v1, eine Person kann nicht vertreten werden.
 - Gespielt wird nach dem [Turnierplan](https://docs.google.com/spreadsheets/d/1m3xTGM5kFjYiyqQcSN8xgM1dlCR-FFavkQp8OuNA62A/edit?usp=sharing).
 - Sollte ein Spiel in der Gruppenphase nicht gespielt werden so wird das Spiel für beide als Niederlage verzeichnet.
@@ -73,7 +73,7 @@ Jede Woche werden drei Tage zum gemeinsamen Austragen von Spielen zur Verfügung
 
 ### Spielablauf
 
-- Die Teams wenden die [Regeln](https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/download/1.2-Final%2B1/de.pdf) an, um folgende Dinge zu wählen:
+- Die Teams wenden die [Regeln]({{< relref "rules/v1_3.md" >}}) an, um folgende Dinge zu wählen:
   + Wurfobjekt 
   + Zielobjekt
   + Spielfeld
