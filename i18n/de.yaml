@@ -9,3 +9,6 @@ pagenotfound: "Die von Ihnen angeforderte Resource konnte nicht gefunden werden.
 latest: "neueste"
 version: "Version"
 deprecated: "veraltete"
+downloadpdf: "PDF herunterladen"
+de: "Deutsch"
+en: "English/Englisch"

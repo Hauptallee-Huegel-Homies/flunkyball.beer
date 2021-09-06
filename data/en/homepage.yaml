@@ -5,9 +5,24 @@ hero:
 about:
   title: About
   content: Every year millions of people play flunkyball recreationally and competetivly. We would like to celebrate that.
-  useicon: true
-  useimage: false
-  icon: fa-beer
+
+rules:
+  title: "Rules"
+  content: Flunkyball knows many kinds of rulesets. We think that's great. However, if you don't know the rules yet or you'd like something written down, we offer you this free download of our compact but extensive rules.
+  downloadlink: "https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/latest/download/en.pdf"
 
 events:
-  title:
+  title: "Events"
+  content: Here in Vienna we like to play Flunkyball regularly. If you'd like to join us you're more than welcome.
+
+clubs:
+  title: "Clubs"
+  content: Groups we know of which like to gather regularly.
+
+halloffame:
+  title: "Hall of fame"
+  content: People we would like to honor because of their accomplishments.
+
+contact:
+  title: "Contact"
+  content: This is how you can contact us.

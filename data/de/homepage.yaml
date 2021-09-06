@@ -1,14 +1,14 @@
 hero:
   title: flunkyball.beer
-  subtitle: zum feiern der urbanen Partyszene in Wien
+  subtitle: zum Feiern der urbanen Partyszene in Wien
 
 about:
   title: "Über Flunkyball"
-  content: Flunkyball wird jährlich von Millionen von Menschen bei Festivals, in Freundesgruppen oder bei Turnieren gespielt. Das wollen wir feiern.
+  content: Flunkyball wird jährlich von Millionen von Menschen bei Festivals, in Freundesgruppen oder bei Turnieren gespielt. Das feiern wir.
 
 rules:
   title: "Regeln"
-  content: Flunkyball kennt viele Regeln und das ist auch gut so. Sollten die Regeln nicht bekannt sein oder die eigenen nicht genau genug niedergeschrieben sein, so bieten wir euch unsere kompakten, dennoch vollständigen Regeln hier zum Download an.
+  content: Flunkyball kennt viele Regeln und das ist auch gut so. Sollten die Regeln nicht bekannt sein oder ihr wollt einen schriftlichen Satz haben, so bieten wir euch unsere kompakten, dennoch vollständigen Regeln hier zum Download an.
   downloadlink: "https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/latest/download/de.pdf"
 
 events:
