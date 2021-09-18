@@ -104,8 +104,13 @@ Dinge zu wählen:
   - Spielfeld
 - Die Getränkeauswahl ist beschränkt auf 0,5L Bierdosen, der Alkoholgehalt kann
   mittels der Regeln bestimmt werden.
+- Sollten sich die Teams nicht auf ein _[Entscheidungsspiel]({{< relref
+  "rules/v1_3.md" >}})_ einigen können, so wird ein einzelner Münzwurf
+  ausgetragen, bei dem bei Kopf *Top* (wenn implizit dann das Team von Links)
+  den Decider gewinnt und bei Zahl *Bottom* (wenn implizit dann das Team von
+  Rechts) den Decider gewinnt.
 - Das Spiel wird nach den Regeln ausgetragen, dabei muss im Nachhinein ein
-Spielbericht (Formlos) mit folgenden Informationen dargelegt werden:
+  Spielbericht (Formlos) mit folgenden Informationen dargelegt werden:
   - Ergebnis des Deciders
   - Ergebnis der Partie
   - Waren noch 0,5L Bier oder mehr vom Verliererteam zu trinken (überwältigender
