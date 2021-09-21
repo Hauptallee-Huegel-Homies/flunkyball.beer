@@ -81,6 +81,7 @@ ausmachen.
 
 - Es gilt der [Regelsatz v1.3](https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/releases/download/1.3-Final%2B2/de.pdf)
   des HaHüHo-Regel Komitees.
+- Die *Heftige* Strafe kommt dem Aufgeben gleich (siehe Unten).
 - Die Begegnungen sind 1v1, eine Person kann nicht vertreten werden.
 - Gespielt wird nach dem
   [Turnierplan](https://docs.google.com/spreadsheets/d/1m3xTGM5kFjYiyqQcSN8xgM1dlCR-FFavkQp8OuNA62A/edit?usp=sharing).
